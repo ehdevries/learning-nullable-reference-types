@@ -10,7 +10,7 @@ namespace NullableReferenceTypesDemo
 
             int letterCount =
                 p.FirstName.Length +
-                p.MiddleName.Length +
+                (p.MiddleName?.Length ?? 0) +
                 p.LastName.Length;
 
             Console.WriteLine($"Hello, {p.FirstName} {p.MiddleName} {p.LastName}");
