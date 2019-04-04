@@ -28,6 +28,6 @@ namespace NullableReferenceTypesDemo
     class PersonStore
     {
         public static Person GetFirstPerson()
-            => new Person { FirstName = "Pat", LastName = "McTest" };
+            => new Person { FirstName = "Pat", MiddleName = "Q", LastName = "McTest" };
     }
 }
