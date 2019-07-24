@@ -16,13 +16,33 @@ Nullable Reference Types can help us avoid this.
 
 This app was created with the following:
 
-- [.NET Core SDK 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0) (preview 3 or later)
+- [.NET Core SDK 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0) (initially preview 3, now updated to preview 7)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [The C# extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 
 Note that all of these tools are available cross-platform (Windows, Mac, and Linux).
 
-Also note that, because .NET Core 3 and C# 8 are still in preview, the feature may change before it becomes generally available.
+Also note that, because .NET Core 3 and C# 8 are still in preview, the feature has changed over the course of several preview releases.
+Conside the API for enabling Nullable Reference Types at the project level, which involves adding a property to a `<PropertyGroup>` in your .csproj file.
+In .NET Core 3 Preview 1, as outlined [here](https://devblogs.microsoft.com/dotnet/take-c-8-0-for-a-spin/), you would add the following:
+
+```xml
+<NullableReferenceTypes>true</NullableReferenceTypes>
+```
+
+In Preview 3, as outlined [here](https://github.com/dotnet/docs/blob/8536137ccf5bac9a4894536b676e5f5a7094a792/docs/csharp/nullable-references.md), it changed to:
+
+```xml
+<NullableContextOptions>enable</NullableContextOptions>
+```
+
+Preview 7 is out now, and the property has likely reached its final version, as specified [here](https://github.com/dotnet/docs/blob/76f3542abffb34cab5bb652c7d9f8ec536634663/docs/csharp/nullable-references.md):
+
+```xml
+<Nullable>enable</Nullable>
+```
+
+If you choose to run this app, you may need to check your installed version of .NET Core 3 and modify the .csproj file accordingly.
 
 ## Run
 
